@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+}
+
+.filter-row + .filter-row {
+    margin-top: 20px;
+}
+
+.filter-row:last-child {
+    margin-bottom: 30px;
+}
+
+.affix {
+    width: 25%;
+    padding-right: 15px;
+}

@@ -1,0 +1,252 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <div affix>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Cards: {{ filtered.length }}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Language</label>
+                            <select class="form-control" ng-model="lang" ng-init="updateLang()" ng-change="updateLang()">
+                                <option value="frFR">Français</option>
+                                <option value="enUS">English (US)</option>
+                                <option value="esES">Español</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Card name</label>
+                            <input type="text" class="form-control" ng-model="cardsFilter">
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-row row">
+                    <div class="col-md-12">
+                        <fieldset>
+                            <legend>Classes</legend>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[2]" /> Druid
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[3]" /> Hunter
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[4]" /> Mage
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[5]" /> Paladin
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[6]" /> Priest
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[7]" /> Rogue
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[8]" /> Shaman
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[9]" /> Warlock
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[10]" /> Warrior
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterClass[11]" /> Dream
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="filter-row row">
+                    <div class="col-md-12">
+                        <fieldset>
+                            <legend>Mana cost</legend>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[0]" /> 0
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[1]" /> 1
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[2]" /> 2
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[3]" /> 3
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[4]" /> 4
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[5]" /> 5
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[6]" /> 6
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" ng-model="filterCost[7]" /> 7
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="filter-row row">
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Types</legend>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCardType[4]" /> Minion
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCardType[5]" /> Spell
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCardType[7]" /> Weapon
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCardType[3]" /> Hero
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCardType[10]" /> Hero power
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Rarity</legend>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRarity[2]" /> Basic
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRarity[1]" /> Commun
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRarity[3]" /> Rare
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRarity[4]" /> Epic
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRarity[5]" /> Legendary
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                </div>
+                <div class="filter-row row">
+                    
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Specs</legend>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterTaunt[true]" /> Taunt
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterBattleCry[true]" /> Battlecry
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterDivineShield[true]" /> Dvin Shield
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterDeathrattle[true]" /> Deathrattle
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterCharge[true]" /> Charge
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterWindfury[true]" /> Windfury
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Races</legend>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[14]" /> Murloc
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[15]" /> Demon
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[17]" /> Mechanical
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[20]" /> Beast
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[21]" /> Totem
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[23]" /> Pirate
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="filterRace[24]" /> Dragon
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-12" id="right">
+            <div class="row">
+                <div class="col-md-2" ng-repeat="c in filtered=(cardsList | filter:filterByClass | filter:filterByCost | filter:filterByCardType | filter:filterByTaunt | filter:filterByBattleCry | filter:filterByDivineShield | filter:filterByDeathrattle |filter:filterByCharge | filter:filterByWindfury | filter:filterByRarity | filter:filterByRace | filter:searchFilter | filter:isNotCredit | orderBy:['Tag.Cost', 'Tag.CardName'])">
+                    <div class="visible">{{ c.Tag.CardName }}</div>
+                    <figure class="hidden">
+                        <img src="http://wow.zamimg.com/images/hearthstone/cards/{{ lang | lowercase }}/original/{{ c.CardID }}.png" alt="{{ c.Tag.CardName }}" class="img-responsive">
+
+                    </figure>
+                    <pre class="visible">{{ c }}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

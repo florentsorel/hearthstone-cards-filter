@@ -239,12 +239,9 @@
         <div class="col-md-9 col-sm-12" id="right">
             <div class="row">
                 <div class="col-md-2" ng-repeat="c in filtered=(cardsList | filter:filterByClass | filter:filterByCost | filter:filterByCardType | filter:filterByTaunt | filter:filterByBattleCry | filter:filterByDivineShield | filter:filterByDeathrattle |filter:filterByCharge | filter:filterByWindfury | filter:filterByRarity | filter:filterByRace | filter:searchFilter | filter:isNotCredit | orderBy:['Tag.Cost', 'Tag.CardName'])">
-                    <div class="visible">{{ c.Tag.CardName }}</div>
-                    <figure class="hidden">
+                    <figure>
                         <img src="http://wow.zamimg.com/images/hearthstone/cards/{{ lang | lowercase }}/original/{{ c.CardID }}.png" alt="{{ c.Tag.CardName }}" class="img-responsive">
-
                     </figure>
-                    <pre class="visible">{{ c }}</pre>
                 </div>
             </div>
         </div>

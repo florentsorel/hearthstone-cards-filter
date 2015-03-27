@@ -9,6 +9,9 @@ HCF is a simply cards filter for "Hearthstone: Heroes of Warcraft". You can filt
   - Specs (Taunt, Battlecry, Divin Shield, Charge, Windfury)
   - Races
 
+# Demo
+You can view a demo [here](http://rtransat.github.io/hearthstone-cards-filter/)
+
 # Database cards
 I use those JSON files to get data cards: https://github.com/jamsyoung/hearthstone-api
 Images are displayed from http://wow.zamimg.com/
